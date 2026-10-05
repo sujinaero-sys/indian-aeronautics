@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indian Aeronautics — India's Digital Aerospace & Aviation Industry Network</title>
+<meta name="description" content="Find aerospace suppliers, post RFQs, list your company and discover aerospace jobs across India.">
+<link rel="canonical" href="https://ia.buye.online/">
+<meta property="og:title" content="Indian Aeronautics"><meta property="og:description" content="India's Digital Aerospace & Aviation Industry Network">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Indian Aeronautics","url":"https://ia.buye.online"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#top"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#1565c0" stroke="#fff" stroke-width="2"/><path d="M17 6c3 3 4 7 4 11l3 4h-4l-1 3h-4l-1-3h-4l3-4c0-4 1-8 4-11z" fill="#fff"/><path d="M15 25h4l-2 5z" fill="#f59e0b"/></svg><span>INDIAN AERONAUTICS</span></a>
+  <nav id="nav"><a href="#companies">Companies</a><a href="#rfq">RFQs</a><a href="portal.html#/mro">MRO</a><a href="portal.html#/academy">Academy</a><a href="portal.html#/plans">Plans</a><a href="#jobs">Jobs</a><a href="#list">List your company</a><a href="#about">About</a><a href="contact.html">Contact</a><a href="portal.html#/login">Log in</a><a href="portal.html#/register">Register</a></nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <h1>Connect with India's aerospace &amp; aviation industry</h1>
+  <p>Discover aerospace companies, suppliers, MRO providers, engineering services and jobs through one platform.</p>
+  <form id="searchForm" class="search" role="search">
+    <input id="q" type="search" placeholder="What are you looking for? e.g. aerospace CNC Tamil Nadu" aria-label="Search">
+    <button class="btn primary">Search</button>
+  </form>
+  <div class="cta"><a class="btn primary" href="#companies">Find a supplier</a><a class="btn ghost" href="#rfq">Post an RFQ</a><a class="btn ghost" href="#list">List your company</a></div>
+  <p class="stats" id="stats" aria-live="polite"></p>
+</section>
+
+<section class="wrap" id="categories"><h2>Browse by industry</h2><div class="chips" id="chips"></div></section>
+
+<section class="wrap" id="companies">
+  <h2>Companies &amp; suppliers</h2>
+  <div class="filters"><select id="fIndustry" aria-label="Industry"><option value="">All industries</option></select><input id="fState" placeholder="State, e.g. Karnataka" aria-label="State"></div>
+  <div id="companyList" class="grid"></div>
+</section>
+
+<section class="wrap split" id="rfq">
+  <div><h2>Post an RFQ</h2><p>Describe what you need. Reviewed requests are shared with relevant suppliers. Attachments are stored privately and shared only according to your visibility setting.</p><div id="rfqList" class="rfqs"></div></div>
+  <div class="card"><h3>RFQs need an account</h3><p>To protect confidential drawings and pricing, RFQs are posted from your signed-in dashboard, with visibility controls (Public, Verified suppliers, Invite-only, Private).</p><a class="btn primary" href="portal.html#/rfq/new">Post an RFQ</a> <a class="btn ghost" href="portal.html#/register">Create account</a></div>
+</section>
+
+<section class="wrap" id="jobs"><h2>Aerospace careers</h2><div id="jobList" class="grid"></div></section>
+
+<section class="wrap split" id="list">
+  <div><h2>List your company — free</h2><p>The first 100 companies list free. Every listing is reviewed before it appears and starts as a Basic Profile (not verified). Certifications you enter are shown as self-declared until documents are checked.</p></div>
+  <form class="form" data-action="company">
+    <input name="name" placeholder="Company name" required>
+    <div class="two"><select name="type" aria-label="Company type"><option>Manufacturer</option><option>Supplier</option><option>MRO</option><option>Engineering services</option><option>Technology</option><option>Training</option></select><select name="industry" id="fIndustry2" aria-label="Industry" required></select></div>
+    <input name="capabilities" placeholder="Capabilities, e.g. 5-axis CNC, composites">
+    <input name="products" placeholder="Products / services">
+    <div class="two"><input name="materials" placeholder="Materials"><input name="certifications" placeholder="Certifications held, e.g. AS9100"></div>
+    <div class="two"><input name="city" placeholder="City" required><input name="state" placeholder="State"></div>
+    <div class="two"><input name="website" placeholder="Website"><select name="export" aria-label="Export capability"><option value="">Export capability</option><option>Yes</option><option>No</option></select></div>
+    <div class="two"><input name="contact_person" placeholder="Contact person" required><input name="phone" placeholder="Phone"></div>
+    <input name="email" type="email" placeholder="Business email" required>
+    <textarea name="description" rows="3" placeholder="About the company"></textarea>
+    <input class="hp" name="website_url_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn primary">Submit for review</button><p class="msg" role="status"></p>
+  </form>
+</section>
+
+<section class="wrap" id="about"><h2>About</h2>
+<p>Indian Aeronautics is a B2B network for supplier discovery, RFQs and aerospace opportunities. Find. Connect. Source. Build. Grow.</p></section>
+</main>
+
+<dialog id="enq"><form class="form" data-action="enquiry">
+  <h3 id="enqTitle">Request quote</h3><input type="hidden" name="company_id">
+  <input name="buyer_name" placeholder="Your name" required><input name="buyer_email" type="email" placeholder="Email" required><input name="buyer_phone" placeholder="Phone">
+  <textarea name="requirement" rows="3" placeholder="What do you need?" required></textarea>
+  <input class="hp" name="website_url_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="two"><button class="btn primary">Send enquiry</button><button class="btn ghost" type="button" id="enqClose">Cancel</button></div><p class="msg" role="status"></p>
+</form></dialog>
+
+<footer><p><a href="legal.html#terms" style="color:#9fb6d6">Terms</a> · <a href="legal.html#privacy" style="color:#9fb6d6">Privacy</a> · <a href="legal.html#refund" style="color:#9fb6d6">Refund &amp; cancellation</a> · <a href="legal.html#cookies" style="color:#9fb6d6">Cookies</a> · <a href="legal.html#disclaimer" style="color:#9fb6d6">Disclaimer</a><br>Support: <a href="mailto:info@buye.online" style="color:#9fb6d6">info@buye.online</a> · <a href="contact.html" style="color:#9fb6d6">WhatsApp +91 9995863184</a><br><br>Indian Aeronautics (ia.buye.online) is a private business network. It is not a government authority, defence procurement body, aviation regulator, certification authority or official tender portal. Verification badges reflect only the status shown. Users must comply with applicable Indian and international laws. Last updated: October 2026.</p></footer>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
+
+
+
+

@@ -1,0 +1,1 @@
+Not used by the GitHub Pages + Google Apps Script deployment. Kept only as a future option if the platform outgrows Google Sheets (an Express + PostgreSQL implementation with 24 passing tests).

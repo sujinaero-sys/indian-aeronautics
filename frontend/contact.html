@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact Indian Aeronautics</title>
+<link rel="stylesheet" href="styles.css"></head><body>
+<header class="top"><a class="brand" href="index.html">INDIAN AERONAUTICS</a></header>
+<main class="wrap"><h2>Contact Indian Aeronautics</h2>
+<p><strong>Email:</strong> <a href="mailto:info@buye.online">info@buye.online</a><br><strong>WhatsApp:</strong> <a id="wa" href="#">+91 9995863184</a></p>
+<h3>Support topics</h3><div class="chips" id="topics"></div>
+<p class="meta">WhatsApp and email open in your own apps. Nothing is sent until you press send.</p>
+<h3>Send us a message</h3>
+<form id="cf" class="form w"><input name="name" placeholder="Name" required><input name="email" type="email" placeholder="Email" required><input name="company" placeholder="Company"><input name="subject" placeholder="Subject" required><textarea name="message" rows="4" placeholder="Message" required></textarea><input class="hp" name="website_url_hp" tabindex="-1" autocomplete="off"><button class="btn primary">Send</button><p class="msg" id="cm" role="status"></p></form></main>
+<script src="config.js"></script><script>
+const T={'Account':'I need help with my account.','Company':'I need help registering my company.','RFQ':'I need help with an RFQ.','Supplier':'I need help as a supplier.','Payment':'I need help with my subscription or payment.','Training':'I need help with training.','MRO':'I need help with MRO listings.','File upload':'I need help uploading a file.','Technical':'I have a technical problem.'};
+document.getElementById('wa').href=IA.wa();
+document.getElementById('topics').innerHTML=Object.keys(T).map(k=>`<a class="chip" style="text-decoration:none" href="${IA.wa('Hello Indian Aeronautics Support, '+T[k])}">${k}</a>`).join('');
+document.getElementById('cf').onsubmit=async e=>{e.preventDefault();const m=document.getElementById('cm'),d=Object.fromEntries(new FormData(e.target));d.action='contact';
+ if(!/^https:\/\/script\.google/.test(IA.api)){m.className='msg err';m.textContent='Backend not connected yet. Email '+IA.email+' instead.';return;}
+ m.className='msg';m.textContent='Sending…';try{const r=await(await fetch(IA.api,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})).json();m.className='msg '+(r.ok?'good':'err');m.textContent=r.ok?'Received. Reference '+r.ref+'. We will reply by email.':r.error;if(r.ok)e.target.reset();}catch{m.className='msg err';m.textContent='Network error. Please try again.';}};
+</script></body></html>
+
+
+
+
