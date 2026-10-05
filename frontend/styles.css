@@ -33,3 +33,69 @@ footer{padding:28px 5vw;background:var(--navy);color:#9fb6d6;font-size:13px}foot
 
 
 
+
+/* IA GLOBAL BUTTON VISIBILITY FIX - 2026-10-05 */
+button,
+.btn,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #102A43 !important;
+  background: #FFFFFF !important;
+  border: 1px solid #7B9BC2 !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: #102A43 !important;
+  cursor: pointer !important;
+}
+
+.btn.primary,
+.btn-primary,
+button.primary,
+input[type="submit"].primary {
+  color: #FFFFFF !important;
+  background: #123B68 !important;
+  border-color: #123B68 !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.btn.ghost,
+.btn-ghost,
+button.ghost {
+  color: #123B68 !important;
+  background: #FFFFFF !important;
+  border-color: #7B9BC2 !important;
+  -webkit-text-fill-color: #123B68 !important;
+}
+
+.btn:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.btn.primary:hover,
+.btn-primary:hover,
+button.primary:hover {
+  color: #FFFFFF !important;
+  background: #0D3157 !important;
+  border-color: #0D3157 !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.btn.sm {
+  min-height: 34px !important;
+  padding: 7px 13px !important;
+  font-weight: 600 !important;
+}
+
+.btn:disabled,
+button:disabled {
+  opacity: .55 !important;
+  color: #64748B !important;
+  background: #E2E8F0 !important;
+  -webkit-text-fill-color: #64748B !important;
+}
